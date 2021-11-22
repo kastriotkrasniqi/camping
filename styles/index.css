@@ -1,0 +1,33 @@
+@import url("./header.css");
+@import url("./footer.css");
+
+.srch-section .container {
+  height: 380px;
+  background-color: #f9f6f1;
+}
+.campgrounds .card {
+  width: 362px;
+}
+.campgrounds img {
+  height: 183px;
+  width: 330px;
+}
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/section.jpg);
+  background-position: center;
+  height: 400px;
+  margin-top: 4rem;
+}
+.banner .row {
+  padding-top: 80px;
+}
+
+.team {
+  background-color: #eef3f7;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.team img {
+  height: 240px;
+}

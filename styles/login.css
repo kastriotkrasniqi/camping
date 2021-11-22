@@ -1,0 +1,27 @@
+@import url(./banner.css);
+@import url(./header.css);
+@import url(./footer.css);
+
+.login-form .left-side {
+  height: calc(100vh - 78px);
+  padding-top: 7%;
+  width: 60vw;
+}
+.left-side form {
+  margin-left: 20%;
+}
+.login-form .right-side {
+  width: 40vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../img/aside.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.right-side h1 {
+  font-size: 4rem;
+  padding-top: 32%;
+}
+#create {
+  color: #0b8ab7;
+}
