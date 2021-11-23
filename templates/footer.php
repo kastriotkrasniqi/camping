@@ -55,7 +55,7 @@
  <footer>
      <div class="container">
          <p class="text-light text-center pt-4 mb-0">
-             &copy; 2021 Sunshine Camp. All rights reserved
+             &copy; 2021 Sunrise Camp. All rights reserved
          </p>
      </div>
  </footer>

@@ -1,4 +1,6 @@
 <?php 
+
+  
     global $conn;
 
 
@@ -16,10 +18,14 @@ function connection(){
 
 function merrUserEmail($email){
     $conn=connection();
-    $sql="SELECT email FROM user where email='$email'";
+    $sql="SELECT * FROM user where email='$email'";
     $result=mysqli_query($conn,$sql);
     
-    return $result;
+    if(mysqli_num_rows($result)==1){
+        return true;
+    }else{
+        return false;
+    }
     
 }
 
@@ -34,10 +40,25 @@ function shtoUser($name,$surname,$email,$password){
     return $result;
 }
 
-
 function logohu($email,$password){
     $conn=connection();
-}
+    $sql = "SELECT * from user where email='$email'";
+
+    $result=mysqli_query($conn,$sql);
+    if($result){
+       
+            $row = mysqli_fetch_assoc($result);
+            if(password_verify($password, $row['password'])){
+                header("Location: index.php");
+                session_start();
+                $_SESSION['userid'] = $row['userid'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['logged_in'] =true;
+                $_SESSION['roli'] = $row['roli'];
+            }
+        }
+    }
+
 
 
 

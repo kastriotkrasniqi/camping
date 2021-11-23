@@ -1,6 +1,6 @@
 <?php 
 include './sqlfunctions.php';
-    $ekziston=false;
+   $ekziston=false;
 
 if (isset($_POST['register'])) {
     $name=htmlentities($_POST['name']); 
@@ -10,10 +10,16 @@ if (isset($_POST['register'])) {
     $password=password_hash($password,PASSWORD_DEFAULT);
 
    
-    shtoUser($name,$surname,$email,$password);
-    header("location:login.php");
-    
+       
+        if(merrUserEmail($email)==false){
 
+            shtoUser($name,$surname,$email,$password);
+            header("location:login.php");
+            
+        }else{
+            $ekziston=true;
+        }
+         
    
 
 }
@@ -65,29 +71,34 @@ if (isset($_POST['register'])) {
 
             <form class="w-50" id="register-form" method="POST">
                 <?php if($ekziston == true): ?>
-                <div class="alert alert-danger  text-center" role="alert">
-                    Email already exists!
+                <div class="alert alert-danger" role="alert">
+                    This email already exist!
                 </div>
                 <?php endif; ?>
+
                 <h2 class="fw-bold mb-2 ">Register</h2>
                 <div class="mb-2">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control bg-light p-2" />
+                    <input type="text" name="name" class="form-control bg-light p-2"
+                        value="<?php if(!empty($_POST['name'])){ echo $_POST['name'];}?>" />
                 </div>
                 <div class="mb-2">
                     <label for="surname" class="form-label">Surname</label>
-                    <input type="text" name="surname" class="form-control bg-light p-2" />
+                    <input type="text" name="surname" class="form-control bg-light p-2"
+                        value="<?php if(!empty($_POST['surname'])){ echo $_POST['surname'];}?>" />
                 </div>
                 <div class="mb-2">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" name="email" class="form-control bg-light p-2" />
+                    <input type="email" name="email" class="form-control bg-light p-2"
+                        value="<?php if(!empty($_POST['email'])){ echo $_POST['email'];}?>" />
                     <div id="emailHelp" class="form-text">
                         We'll never share your email with anyone else.
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control bg-light p-2" />
+                    <input type="password" name="password" class="form-control bg-light p-2"
+                        value="<?php if(!empty($_POST['password'])){ echo $_POST['password'];}?>" />
                 </div>
 
                 <button type="submit" name="register" class="btn btn-dark w-100 p-2 mb-3">

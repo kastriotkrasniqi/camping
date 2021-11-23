@@ -1,4 +1,13 @@
+<?php session_start(); ?>
 <!-- ========== Start Header ========== -->
+<?php 
+    
+        if(isset($_GET['logout'])){
+            session_destroy();
+            header('location:login.php');
+        }
+    
+    ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -20,7 +29,21 @@
             </ul>
         </div>
         <div>
-            <a href="login.php" class="btn btn-outline-secondary px-4">Login</a>
+            <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true): ?>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php echo $_SESSION['name']; ?>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item " href="?logout=<?php echo $_SESSION['userid'] ?>">Log
+                            out</a></li>
+                </ul>
+            </div>
+            <?php else: ?>
+            <a href="login.php" class="btn btn-outline-secondary px-4">Log in</a>
+            <?php endif; ?>
+
         </div>
     </div>
 </nav>
