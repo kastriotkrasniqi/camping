@@ -38,7 +38,7 @@
                     Search
                 </button>
             </div>
-            <a href="" class="text-muted">Or add your own campground</a>
+            <a href="" class=" btn btn-secondary">or Join a Camp</a>
         </div>
     </section>
     <!-- ========== End Search-Section ========== -->

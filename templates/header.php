@@ -1,10 +1,22 @@
 <?php session_start(); ?>
+<?php include_once './sqlfunctions.php'; ?>
 <!-- ========== Start Header ========== -->
 <?php 
     
         if(isset($_GET['logout'])){
             session_destroy();
             header('location:login.php');
+        }
+        if(isset($_GET['delete'])){
+            $userid=$_GET['delete'];
+             deleteUser($userid);
+             unset($_SESSION['logged_in']);
+             header('location:login.php');
+        }
+        if(isset($_GET['edit'])){
+           
+            
+             header('location:editUser.php');
         }
     
     ?>
@@ -36,12 +48,15 @@
                     <?php echo $_SESSION['name']; ?>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item " href="?logout=<?php echo $_SESSION['userid'] ?>">Log
+                    <li><a class="dropdown-item " href="?logout=    ">Log
                             out</a></li>
+                    <li><a class="dropdown-item " href="?edit">Edit Account</a></li>
+                    <li><a class="dropdown-item " href="?delete=<?php echo $_SESSION['userid'];?>">Delete
+                            account</a></li>
                 </ul>
             </div>
             <?php else: ?>
-            <a href="login.php" class="btn btn-outline-secondary px-4">Log in</a>
+            <a href=" login.php" class="btn btn-outline-secondary px-4">Log in</a>
             <?php endif; ?>
 
         </div>
