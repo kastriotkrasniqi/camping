@@ -1,3 +1,4 @@
+<?php include './sqlfunctions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +34,14 @@
     }
     </style>
 </head>
+
+<?php if(isset($_GET['deletecamp'])){
+            $campid=$_GET['deletecamp'];
+            deleteCamp($campid);
+
+            header('location:camps.php');
+                    }  ?>
+
 
 <body>
     <!-- ========== Start Header ========== -->
@@ -128,63 +137,47 @@
             <table border="1" class="table table-striped my-4">
                 <tbody>
                     <tr>
-                        <th>Emri dhe Mbiemri</th>
-                        <th>Telefoni</th>
-                        <th>Email</th>
-                        <th>Detyrat</th>
-                        <th>Action</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Start</th>
+                        <th>Finish</th>
+                        <th>Description</th>
+                        <th>Organizer</th>
+                        <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <?php endif; endif; ?>
+
                     </tr>
+                    <?php $result=merrCamp(); ?>
+                    <?php while($row=mysqli_fetch_assoc($result)): ?>
                     <tr>
-                        <td>Berat Perçuku</td>
-                        <td>044/000000</td>
-                        <td>berat.percuku@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['location'] ?></td>
+                        <td><?php echo $row['start'] ?></td>
+                        <td><?php echo $row['finish'] ?></td>
+                        <td><?php echo $row['description'] ?></td>
+                        <td><?php echo $row['organizatori']; ?></td>
+                        <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
+                        <td><a href="shto_modifikoKampet.php?kampiid=<?php echo $row['campid']?>"><i
+                                    class="far fa-edit fs-5 d-flex justify-content-center text-warning"></i></a>
+                        </td>
+                        <td><a href="?deletecamp=<?php echo $row['campid']?>"><i
+                                    class="far fa-trash-alt fs-5 d-flex justify-content-center text-danger"></i></a>
+                        </td>
+                        <?php endif; endif; ?>
                     </tr>
-                    <tr>
-                        <td>Burim Avdiu</td>
-                        <td>044/000000</td>
-                        <td>burim.avdiu@probit-kos.com</td>
-                        <td>Programer ne Java</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Armend Shabani</td>
-                        <td>044/000000</td>
-                        <td>armend.shabani@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Berat Perçuku</td>
-                        <td>044/000000</td>
-                        <td>berat.percuku@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Burim Avdiu</td>
-                        <td>044/000000</td>
-                        <td>burim.avdiu@probit-kos.com</td>
-                        <td>Programer ne Java</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Armend Shabani</td>
-                        <td>044/000000</td>
-                        <td>armend.shabani@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <th>Emri dhe Mbiemri</th>
-                        <th>Telefoni</th>
-                        <th>Email</th>
-                        <th>Detyrat</th>
-                        <th>Action</th>
-                    </tr>
+
+                    <?php endwhile; ?>
+
                 </tbody>
             </table>
+            <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
+            <a href="shto_modifikoKampet.php" class="btn btn-success float-end">Shto kampe</a>
+            <?php endif; endif; ?>
         </div>
     </section>
     <!-- ========== End Camps ========== -->

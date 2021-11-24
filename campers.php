@@ -1,3 +1,4 @@
+<?php include './sqlfunctions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +36,19 @@
     }
     </style>
 </head>
+
+<?php 
+
+            if(isset($_GET['deleteCamper'])){
+                $camperid=$_GET['deleteCamper'];
+
+                deleteCampers($camperid);  
+                header('location:campers.php');
+            }
+
+        
+
+?>
 
 <body>
     <!-- ========== Start Header ========== -->
@@ -94,66 +108,46 @@
             <table border="1" class="table table-striped my-4">
                 <tbody>
                     <tr>
-                        <th>Emri dhe Mbiemri</th>
-                        <th>Telefoni</th>
-                        <th>Email</th>
-                        <th>Detyrat</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Camp</th>
+                        <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
                         <th>Edit</th>
                         <th>Delete</th>
+                        <?php endif; endif; ?>
                     </tr>
+                    <?php $result=merrCampers(); ?>
+                    <?php while($row=mysqli_fetch_assoc($result)): ?>
                     <tr>
-                        <td>Berat Perçuku</td>
-                        <td>044/000000</td>
-                        <td>berat.percuku@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td><i class="far fa-edit fs-5 d-flex justify-content-center text-danger"></i></td>
-                        <td><i class="far fa-trash-alt fs-5 d-flex justify-content-center text-warning"></i></td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['surname'] ?></td>
+                        <td><?php echo $row['address'] ?></td>
+                        <td><?php echo $row['phone'] ?></td>
+                        <td><?php echo $row['kampi'] ?></td>
+                        <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
+                        <td><a href="shto_modifikoCampers.php?editCamper=<?php echo $row['camperid'] ?>"><i
+                                    class="far fa-edit fs-5 d-flex justify-content-center text-warning"></i></a>
+                        </td>
+                        <td><a href="?deleteCamper=<?php echo $row['camperid'] ?>"><i
+                                    class="far fa-trash-alt fs-5 d-flex justify-content-center text-danger"></i></a>
+                        </td>
+                        <?php endif; endif; ?>
                     </tr>
-                    <tr>
-                        <td>Burim Avdiu</td>
-                        <td>044/000000</td>
-                        <td>burim.avdiu@probit-kos.com</td>
-                        <td>Programer ne Java</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Armend Shabani</td>
-                        <td>044/000000</td>
-                        <td>armend.shabani@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Berat Perçuku</td>
-                        <td>044/000000</td>
-                        <td>berat.percuku@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Burim Avdiu</td>
-                        <td>044/000000</td>
-                        <td>burim.avdiu@probit-kos.com</td>
-                        <td>Programer ne Java</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Armend Shabani</td>
-                        <td>044/000000</td>
-                        <td>armend.shabani@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <th>Emri dhe Mbiemri</th>
-                        <th>Telefoni</th>
-                        <th>Email</th>
-                        <th>Detyrat</th>
-                        <th>Action</th>
-                    </tr>
+                    <?php endwhile; ?>
+
                 </tbody>
             </table>
-            <a href="shto_modifikoKampet.php" class="btn btn-success rounded-pill px-5 float-end">Add Camps</a>
+            <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
+            <a href="shto_modifikoCampers.php" class="btn btn-success float-end">Edit Campers</a>
+            <?php else: ?>
+            <a href="shto_modifikoCampers.php" class="btn btn-success float-end">Join Camp</a>
+            <?php endif; endif; ?>
+
         </div>
     </section>
     <!-- ========== End Campers ========== -->

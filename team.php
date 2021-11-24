@@ -1,3 +1,4 @@
+<?php include './sqlfunctions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +29,20 @@
     }
     </style>
 </head>
+
+<?php 
+                if(isset($_GET['deleteTeam'])){
+                    $teamid=$_GET['deleteTeam'];
+
+                    deleteTeam($teamid);
+                    header('location:team.php');
+                    
+                }
+            
+            
+            
+            
+            ?>
 
 <body>
     <!-- ========== Start Header ========== -->
@@ -75,6 +90,7 @@
     </section>
     <!-- ========== End Team ========== -->
 
+
     <!-- ========== Start team-members ========== -->
     <section class="tabela">
         <div class="container">
@@ -82,63 +98,45 @@
             <table border="1" class="table table-striped my-4">
                 <tbody>
                     <tr>
-                        <th>Emri dhe Mbiemri</th>
-                        <th>Telefoni</th>
+                        <th>Name</th>
                         <th>Email</th>
-                        <th>Detyrat</th>
-                        <th>Action</th>
+                        <th>Phone</th>
+
+                        <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <?php endif; endif; ?>
+
                     </tr>
+                    <?php $result=merrTeam(); ?>
+                    <?php while($row=mysqli_fetch_assoc($result)): ?>
                     <tr>
-                        <td>Berat Perçuku</td>
-                        <td>044/000000</td>
-                        <td>berat.percuku@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['email'] ?></td>
+                        <td><?php echo $row['phone'] ?></td>
+
+
+                        <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
+                        <td><a href="shto_modifikoTeam.php?editTeam=<?php echo $row['teamid'];?>"><i
+                                    class="far fa-edit fs-5 d-flex justify-content-center text-warning"></i></a>
+                        </td>
+                        <td><a href="?deleteTeam=<?php echo $row['teamid'];?>"><i
+                                    class="far fa-trash-alt fs-5 d-flex justify-content-center text-danger"></i></a>
+                        </td>
+
+                        <?php endif; endif; ?>
+
+
                     </tr>
-                    <tr>
-                        <td>Burim Avdiu</td>
-                        <td>044/000000</td>
-                        <td>burim.avdiu@probit-kos.com</td>
-                        <td>Programer ne Java</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Armend Shabani</td>
-                        <td>044/000000</td>
-                        <td>armend.shabani@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Berat Perçuku</td>
-                        <td>044/000000</td>
-                        <td>berat.percuku@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Burim Avdiu</td>
-                        <td>044/000000</td>
-                        <td>burim.avdiu@probit-kos.com</td>
-                        <td>Programer ne Java</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <td>Armend Shabani</td>
-                        <td>044/000000</td>
-                        <td>armend.shabani@probit-kos.com</td>
-                        <td>Programer ne WEB</td>
-                        <td>3 vite</td>
-                    </tr>
-                    <tr>
-                        <th>Emri dhe Mbiemri</th>
-                        <th>Telefoni</th>
-                        <th>Email</th>
-                        <th>Detyrat</th>
-                        <th>Action</th>
-                    </tr>
+                    <?php endwhile; ?>
                 </tbody>
             </table>
+            <?php if(isset($_SESSION['roli'])):
+                        if($_SESSION['roli'] ==1): ?>
+            <a href="shto_modifikoTeam.php" class="btn btn-success float-end">Shto team</a>
+            <?php endif; endif; ?>
         </div>
     </section>
     <!-- ========== End team-members ========== -->

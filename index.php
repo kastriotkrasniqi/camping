@@ -38,7 +38,7 @@
                     Search
                 </button>
             </div>
-            <a href="" class=" btn btn-secondary">or Join a Camp</a>
+            <a href="shto_modifikoCampers.php" class=" btn btn-secondary">or Join a Camp</a>
         </div>
     </section>
     <!-- ========== End Search-Section ========== -->

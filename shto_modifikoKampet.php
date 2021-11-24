@@ -1,3 +1,4 @@
+<?php include './sqlfunctions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +29,39 @@
     </style>
 </head>
 
+<?php 
+            
+            if(isset($_GET['kampiid'])){
+                $kampi=mysqli_fetch_assoc(merrKampiid($_GET['kampiid']));
+            }
+            
+            
+            if(isset($_POST['add'])){
+                $name=$_POST['name'];
+                $location=$_POST['location'];
+                $start=$_POST['start'];
+                $finish=$_POST['finish'];
+                $description=$_POST['description'];
+                $organizer=$_POST['organizer'];
+
+                shtoKampin($name,$location,$start,$finish,$description,$organizer);
+                header('location:camps.php');
+            }
+            if(isset($_POST['update'])){
+                $campid=$_POST['id'];
+                $name=$_POST['name'];
+                $location=$_POST['location'];
+                $start=$_POST['start'];
+                $finish=$_POST['finish'];
+                $description=$_POST['description'];
+                $organizer=$_POST['organizer'];
+
+                updateKampin($name,$location,$start,$finish,$description,$organizer,$campid);
+                header('location:camps.php');
+            }
+            
+            ?>
+
 <body>
     <!-- ========== Start Header ========== -->
 
@@ -45,20 +79,53 @@
     <!-- ========== Start Forma ========== -->
     <section class="forma">
         <div class="container d-flex flex-column align-items-center ">
-            <h1 class="mt-5 ">Add/Update Camps</h1>
-            <form class="w-50 mt-3 p-5 bg-light shadow-lg">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" name="email" class="form-control">
+
+            <form class="w-50 mt-3 p-5 bg-light shadow-lg" method="POST">
+                <h1 class=" ">Add/Update Camps</h1>
+                <div class="mb-2">
+                    <input type="hidden" name="id" value="<?php if(isset($_GET['kampiid'])) echo $kampi['campid'];?>">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control"
+                        value="<?php if(isset($_GET['kampiid'])) echo $kampi['name'];?>">
 
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control">
+                <div class="mb-2">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" name="location" class="form-control"
+                        value="<?php if(isset($_GET['kampiid'])) echo $kampi['location'];?>">
                 </div>
+                <div class=" mb-2">
+                    <label for="start" class="form-label">Start</label>
+                    <input type="date" name="start" class="form-control"
+                        value="<?php if(isset($_GET['kampiid'])) echo $kampi['start'];?>">
+                </div>
+                <div class=" mb-2">
+                    <label for="finish" class="form-label">Finish</label>
+                    <input type="date" name="finish" class="form-control"
+                        value="<?php if(isset($_GET['kampiid'])) echo $kampi['finish'];?>">
+                </div>
+                <div class=" mb-2">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" name="description" class="form-control"
+                        value="<?php if(isset($_GET['kampiid'])) echo $kampi['description'];?>">
+                </div>
+                <?php $result=merrTeam(); ?>
+                <div class="mb-4">
+                    <label for="organizer" class="form-label">Organizer</label>
+                    <select class="form-select" name="organizer" id="inputGroupSelect01">
 
-                <a href="#" class="btn btn-success rounded-pill px-5 float-end">Add</a>
-                <a href="#" class="btn btn-warning rounded-pill px-5 float-end">Update</a>
+                        <?php while($team=mysqli_fetch_array($result)): ?>
+                        <option value="<?php  echo $team['teamid'];?>"
+                            <?php if(isset($_GET['kampiid']))if($team['teamid'] == $kampi['teamid']) echo 'selected' ; ?>>
+                            <?php echo $team['name']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                </div>
+                <?php if(isset($_GET['kampiid'])): ?>
+                <button type="submit" name="update" class="btn btn-warning  px-5 float-end">Update</button>
+                <?php else: ?>
+                <button type="submit" name="add" class="btn btn-success  px-5 float-end">Add</button>
+                <?php endif; ?>
             </form>
         </div>
     </section>
