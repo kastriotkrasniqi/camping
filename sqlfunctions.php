@@ -118,7 +118,7 @@ function logohu($email,$password){
     
     function merrCampers(){
         $conn=connection();
-        $sql="SELECT c.*, ca.name as kampi from camper c inner join camp ca on c.campid=ca.campid";
+        $sql="SELECT c.*, ca.name as kampi ,ca.start as start ,ca.finish as finish from camper c inner join camp ca on c.campid=ca.campid";
         $result=mysqli_query($conn,$sql);
         return $result;
 

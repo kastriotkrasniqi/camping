@@ -113,6 +113,8 @@
                         <th>Address</th>
                         <th>Phone</th>
                         <th>Camp</th>
+                        <th>Start </th>
+                        <th>Finish</th>
                         <?php if(isset($_SESSION['roli'])):
                         if($_SESSION['roli'] ==1): ?>
                         <th>Edit</th>
@@ -127,6 +129,8 @@
                         <td><?php echo $row['address'] ?></td>
                         <td><?php echo $row['phone'] ?></td>
                         <td><?php echo $row['kampi'] ?></td>
+                        <td><?php echo $row['start'] ?></td>
+                        <td><?php echo $row['finish'] ?></td>
                         <?php if(isset($_SESSION['roli'])):
                         if($_SESSION['roli'] ==1): ?>
                         <td><a href="shto_modifikoCampers.php?editCamper=<?php echo $row['camperid'] ?>"><i
@@ -141,12 +145,11 @@
 
                 </tbody>
             </table>
-            <?php if(isset($_SESSION['roli'])):
-                        if($_SESSION['roli'] ==1): ?>
-            <a href="shto_modifikoCampers.php" class="btn btn-success float-end">Edit Campers</a>
-            <?php else: ?>
+
             <a href="shto_modifikoCampers.php" class="btn btn-success float-end">Join Camp</a>
-            <?php endif; endif; ?>
+
+
+
 
         </div>
     </section>

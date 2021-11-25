@@ -9,6 +9,7 @@
         }
         if(isset($_GET['delete'])){
             $userid=$_GET['delete'];
+           
              deleteUser($userid);
              unset($_SESSION['logged_in']);
              header('location:login.php');
@@ -51,7 +52,8 @@
                     <li><a class="dropdown-item " href="?logout=    ">Log
                             out</a></li>
                     <li><a class="dropdown-item " href="?edit">Edit Account</a></li>
-                    <li><a class="dropdown-item " href="?delete=<?php echo $_SESSION['userid'];?>">Delete
+                    <li><a class="dropdown-item " onClick="return confirm('Are you sure you want to delete ?');"
+                            href="?delete=<?php echo $_SESSION['userid'];?>">Delete
                             account</a></li>
                 </ul>
             </div>
