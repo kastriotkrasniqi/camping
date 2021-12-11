@@ -141,7 +141,7 @@
                         <th>Location</th>
                         <th>Start</th>
                         <th>Finish</th>
-                        <th>Description</th>
+                        <th class="d-none d-md-block">Description</th>
                         <th>Organizer</th>
                         <?php if(isset($_SESSION['roli'])):
                         if($_SESSION['roli'] ==1): ?>
@@ -157,7 +157,7 @@
                         <td><?php echo $row['location'] ?></td>
                         <td><?php echo $row['start'] ?></td>
                         <td><?php echo $row['finish'] ?></td>
-                        <td><?php echo $row['description'] ?></td>
+                        <td class="d-none d-md-block"><?php echo $row['description'] ?></td>
                         <td><?php echo $row['organizatori']; ?></td>
                         <?php if(isset($_SESSION['roli'])):
                         if($_SESSION['roli'] ==1): ?>

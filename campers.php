@@ -110,8 +110,8 @@
                     <tr>
                         <th>Name</th>
                         <th>Surname</th>
-                        <th>Address</th>
-                        <th>Phone</th>
+                        <th class="d-none d-md-block">Address</th>
+                        <th class="d-none d-md-block">Phone</th>
                         <th>Camp</th>
                         <th>Start </th>
                         <th>Finish</th>
@@ -126,8 +126,8 @@
                     <tr>
                         <td><?php echo $row['name'] ?></td>
                         <td><?php echo $row['surname'] ?></td>
-                        <td><?php echo $row['address'] ?></td>
-                        <td><?php echo $row['phone'] ?></td>
+                        <td class="d-none d-md-block"><?php echo $row['address'] ?></td>
+                        <td class="d-none d-md-block"><?php echo $row['phone'] ?></td>
                         <td><?php echo $row['kampi'] ?></td>
                         <td><?php echo $row['start'] ?></td>
                         <td><?php echo $row['finish'] ?></td>
