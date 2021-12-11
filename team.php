@@ -70,17 +70,17 @@
                 assumenda qui!
             </p>
             <div class="row text-center">
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <img src="./img/portrait-1.jpg" class="rounded-3 mb-3" alt="" />
                     <h5>Alita Avilius</h5>
                     <p class="text-secondary">Director</p>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <img src="./img/portrait2.jpg" class="rounded-3 mb-3" alt="" />
                     <h5>Odell Cody</h5>
                     <p class="text-secondary">Manager</p>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <img src="./img/portrait3.jpg" class="rounded-3 mb-3" alt="" />
                     <h5>Lyndsea Geraldine</h5>
                     <p class="text-secondary">Financer</p>

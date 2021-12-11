@@ -25,8 +25,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand mt-2 mt-lg-0 fs-4" href="index.php">Sunrise Camp</a>
-        <div class="navbar">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5 gap-2">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+            <ul class="navbar-nav me-auto ms-auto  mb-2 mb-lg-0 fs-5 gap-2  ">
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
@@ -40,8 +45,8 @@
                     <a class="nav-link" href="campers.php">Campers</a>
                 </li>
             </ul>
-        </div>
-        <div>
+
+
             <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true): ?>
             <div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -58,7 +63,7 @@
                 </ul>
             </div>
             <?php else: ?>
-            <a href=" login.php" class="btn btn-outline-secondary px-4">Log in</a>
+            <a href="login.php" class="btn btn-outline-secondary px-4 ">Log in</a>
             <?php endif; ?>
 
         </div>

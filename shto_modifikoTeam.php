@@ -70,7 +70,7 @@
     <section class="forma" id="forma">
         <div class="container d-flex flex-column align-items-center ">
 
-            <form class="w-50 mt-3 p-5 bg-light shadow-lg" method="POST">
+            <form class="col-lg-6 col-12 mt-3 p-5 bg-light shadow-lg" method="POST">
                 <?php if(isset($_GET['editTeam'])): ?>
                 <h1 class=" text-center">Update Team</h1>
                 <?php else: ?>

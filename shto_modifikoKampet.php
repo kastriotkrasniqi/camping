@@ -80,7 +80,7 @@
     <section class="forma">
         <div class="container d-flex flex-column align-items-center ">
 
-            <form class="w-50 mt-3 p-5 bg-light shadow-lg" method="POST">
+            <form class="col-lg-6 col-12 mt-3 p-5 bg-light shadow-lg" method="POST">
                 <h1 class=" ">Add/Update Camps</h1>
                 <div class="mb-2">
                     <input type="hidden" name="id" value="<?php if(isset($_GET['kampiid'])) echo $kampi['campid'];?>">

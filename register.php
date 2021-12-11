@@ -69,7 +69,7 @@ if (isset($_POST['register'])) {
     <section class="login-form d-flex">
         <div class="container left-side">
 
-            <form class="w-50" id="register-form" method="POST">
+            <form class="col-lg-8 col-12 col-sm-12 p-5 ms-auto me-auto" id="register-form" method="POST">
                 <?php if($ekziston == true): ?>
                 <div class="alert alert-danger" role="alert">
                     This email already exist!
@@ -108,7 +108,7 @@ if (isset($_POST['register'])) {
             </form>
         </div>
 
-        <div class="right-side">
+        <div class="right-side col-5 d-none d-lg-block">
             <h1 class="text-light fw-bold text-center">
                 Start exploring camps from all around the world.
             </h1>

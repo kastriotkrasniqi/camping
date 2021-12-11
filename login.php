@@ -53,8 +53,8 @@ if (isset($_POST['login'])) {
 
     <!-- ========== Start Login-form ========== -->
     <section class="login-form d-flex">
-        <div class="container left-side">
-            <form class="w-50" id="login-form" method="POST">
+        <div class="container left-side ">
+            <form class="col-lg-8 col-12 col-sm-12 p-5 ms-auto me-auto" id="login-form" method="POST">
                 <?php if($jologuar==true): ?>
                 <div class="alert alert-danger" role="alert">
                     Incorrect Data!
@@ -82,7 +82,7 @@ if (isset($_POST['login'])) {
             </form>
         </div>
 
-        <div class="right-side">
+        <div class="right-side col-5 d-none d-lg-block  ">
             <h1 class="text-light fw-bold text-center">
                 Start exploring camps from all around the world.
             </h1>

@@ -2,7 +2,7 @@
 @import url("./footer.css");
 
 .srch-section .container {
-  height: 380px;
+  height: 410px !important;
   background-color: #f9f6f1;
 }
 .campgrounds .card {

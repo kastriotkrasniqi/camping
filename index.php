@@ -9,6 +9,7 @@
     <!-- ========== Start Typograhy ========== -->
     <?php include './templates/typography.php'; ?>
     <!-- ========== End Typograhy ========== -->
+
     <link rel="stylesheet" href="./styles/index.css">
     <title>Document</title>
 </head>
@@ -18,25 +19,26 @@
     <?php include './templates/header.php'; ?>
     <!-- ========== End Header ========== -->
     <!-- ========== Start Search-Section ========== -->
-    <section class="srch-section mt-4">
-        <div class="container rounded-3 p-5">
-            <div class="mb-4">
+    <section class="srch-section mt-4 ">
+        <div class="container rounded-3 py-4 px-5">
+            <div class="mb-4 col-lg-5">
                 <h1 class="fw-bold">
                     Welcome to Sunrise <br />
                     Camp
                 </h1>
-                <p class="text-muted mt-3 w-50">
+                <p class="text-muted mt-3  ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non,
                     enim ipsa ducimus cumque accusantium aliquid. Dolorum, doloribus
                     ipsum. In.
                 </p>
-            </div>
-            <div class="input-group mb-3 w-25">
-                <input type="text" class="form-control" placeholder="Search for camps" aria-label="Recipient's username"
-                    aria-describedby="button-addon2" />
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+
+
+                <input type="text" class="form-control " placeholder="Search for camps"
+                    aria-label="Recipient's username" aria-describedby="button-addon2" />
+                <button class="btn btn-outline-secondary mt-1" type="button" id="button-addon2">
                     Search
                 </button>
+
             </div>
             <a href="shto_modifikoCampers.php" class=" btn btn-secondary">or Join a Camp</a>
         </div>
@@ -45,7 +47,7 @@
 
     <!-- ========== Start Campgrounds ========== -->
     <section class="campgrounds my-5">
-        <div class="container d-flex justify-content-between flex-wrap gap-4">
+        <div class="container d-flex justify-content-lg-around justify-content-sm-center flex-wrap gap-4">
             <div class="card p-3 rounded-3">
                 <img src="./img/Buloy Springs.jpg" class="card-img-top rounded-3" alt="..." />
                 <div class="card-body">
@@ -116,10 +118,10 @@
     </section>
     <!-- ========== End Campgrounds ========== -->
     <!-- ========== Start Banner ========== -->
-    <section class="banner">
+    <section class="banner h-100">
         <div class="container py-4">
             <div class="row text-light text-center">
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <i class="fas fa-hiking fa-4x mb-3"></i>
                     <h2 class="mb-3">Hiking</h2>
                     <p>
@@ -127,7 +129,7 @@
                         Laboriosam, cum.
                     </p>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <i class="fas fa-campground fa-4x mb-3"></i>
                     <h2 class="mb-3">Campground</h2>
                     <p>
@@ -136,7 +138,7 @@
                     </p>
                 </div>
 
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <i class="fas fa-tree fa-4x mb-3"></i>
                     <h2 class="mb-3">Mountains</h2>
                     <p>
@@ -161,17 +163,17 @@
                 assumenda qui!
             </p>
             <div class="row text-center">
-                <div class="col-4">
+                <div class="col-lg-4 col-12 ">
                     <img src="./img/portrait-1.jpg" class="rounded-3 mb-3" alt="" />
                     <h5>Alita Avilius</h5>
                     <p class="text-secondary">Director</p>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <img src="./img/portrait2.jpg" class="rounded-3 mb-3" alt="" />
                     <h5>Odell Cody</h5>
                     <p class="text-secondary">Manager</p>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <img src="./img/portrait3.jpg" class="rounded-3 mb-3" alt="" />
                     <h5>Lyndsea Geraldine</h5>
                     <p class="text-secondary">Financer</p>
