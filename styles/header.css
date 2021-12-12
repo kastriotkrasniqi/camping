@@ -7,3 +7,6 @@ body {
   letter-spacing: 1px;
   color: #fcb005 !important;
 }
+.navbar-expand-lg {
+  height: 72px !important;
+}

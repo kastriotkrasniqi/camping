@@ -49,11 +49,18 @@ if (isset($_POST['register'])) {
 
     .left-side {
         padding-top: 50px !important;
+
     }
 
     .error {
         font-size: 15px;
         color: red;
+    }
+
+    @media only screen and (max-width: 992px) {
+        .left-side {
+            height: auto !important;
+        }
     }
     </style>
 </head>
@@ -66,8 +73,8 @@ if (isset($_POST['register'])) {
     <!-- ========== End Header ========== -->
 
     <!-- ========== Start Login-form ========== -->
-    <section class="login-form d-flex">
-        <div class="container left-side">
+    <section class="login-form d-flex ">
+        <div class="container left-side ">
 
             <form class="col-lg-8 col-12 col-sm-12 p-5 ms-auto me-auto" id="register-form" method="POST">
                 <?php if($ekziston == true): ?>

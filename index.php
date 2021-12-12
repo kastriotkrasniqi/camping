@@ -20,7 +20,7 @@
     <!-- ========== End Header ========== -->
     <!-- ========== Start Search-Section ========== -->
     <section class="srch-section mt-4 ">
-        <div class="container rounded-3 py-4 px-5">
+        <div class="container rounded-3 py-5 px-5">
             <div class="mb-4 col-lg-5">
                 <h1 class="fw-bold">
                     Welcome to Sunrise <br />
@@ -32,15 +32,17 @@
                     ipsum. In.
                 </p>
 
+            </div>
 
-                <input type="text" class="form-control " placeholder="Search for camps"
+            <div class="col-lg-6 d-lg-flex gap-1">
+                <input type="text" class="form-control  " placeholder="Search for camps"
                     aria-label="Recipient's username" aria-describedby="button-addon2" />
-                <button class="btn btn-outline-secondary mt-1" type="button" id="button-addon2">
+                <button class="btn btn-outline-secondary mt-1 mt-lg-0 d-lg-inline " type="button" id="button-addon2">
                     Search
                 </button>
-
             </div>
-            <a href="shto_modifikoCampers.php" class=" btn btn-secondary">or Join a Camp</a>
+
+            <a href="shto_modifikoCampers.php" class="mt-3 btn btn-secondary">or Join a Camp</a>
         </div>
     </section>
     <!-- ========== End Search-Section ========== -->
