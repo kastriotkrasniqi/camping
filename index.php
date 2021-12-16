@@ -49,71 +49,73 @@
 
     <!-- ========== Start Campgrounds ========== -->
     <section class="campgrounds my-5">
-        <div class="container d-flex justify-content-lg-around justify-content-sm-center flex-wrap gap-4">
-            <div class="card p-3 rounded-3">
-                <img src="./img/Buloy Springs.jpg" class="card-img-top rounded-3" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Buloy Springs</h5>
-                    <p class="card-text text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-                        voluptate.
-                    </p>
-                    <a href="#" class="btn btn-dark">View Campground</a>
+        <div class="container">
+            <div class="row  gap-3 justify-content-center justify-content-lg-between">
+                <div class="card p-3 rounded-3 col-lg-3 col-md-4 col-12">
+                    <img src="./img/Buloy Springs.jpg" class="card-img-top rounded-3" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Buloy Springs</h5>
+                        <p class="card-text text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+                            voluptate.
+                        </p>
+                        <a href="#" class="btn btn-dark">View Campground</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card p-3 rounded-3">
-                <img src="./img/Latik Riverside.jpg" class="card-img-top rounded-3" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Latik Riverside</h5>
-                    <p class="card-text text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-                        voluptate.
-                    </p>
-                    <a href="#" class="btn btn-dark">View Campground</a>
+                <div class="card p-3 rounded-3 col-lg-3 col-md-4 col-12">
+                    <img src="./img/Latik Riverside.jpg" class="card-img-top rounded-3" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Latik Riverside</h5>
+                        <p class="card-text text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+                            voluptate.
+                        </p>
+                        <a href="#" class="btn btn-dark">View Campground</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card p-3 rounded-3">
-                <img src="./img/Calaguas Island.jpg" class="card-img-top rounded-3" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Calagus Island</h5>
-                    <p class="card-text text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-                        voluptate.
-                    </p>
-                    <a href="#" class="btn btn-dark">View Campground</a>
+                <div class="card p-3 rounded-3 col-lg-3 col-md-4 col-12">
+                    <img src="./img/Calaguas Island.jpg" class="card-img-top rounded-3" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Calagus Island</h5>
+                        <p class="card-text text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+                            voluptate.
+                        </p>
+                        <a href="#" class="btn btn-dark">View Campground</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card p-3 rounded-3">
-                <img src="./img/Mount Ulap.jpg" class="card-img-top rounded-3" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Mount Ulap</h5>
-                    <p class="card-text text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-                        voluptate.
-                    </p>
-                    <a href="#" class="btn btn-dark">View Campground</a>
+                <div class="card p-3 rounded-3 col-lg-3 col-md-4 col-12">
+                    <img src="./img/Mount Ulap.jpg" class="card-img-top rounded-3" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Mount Ulap</h5>
+                        <p class="card-text text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+                            voluptate.
+                        </p>
+                        <a href="#" class="btn btn-dark">View Campground</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card p-3 rounded-3">
-                <img src="./img/Onay Beach.jpg" class="card-img-top rounded-3" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Onay Beach</h5>
-                    <p class="card-text text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-                        voluptate.
-                    </p>
-                    <a href="#" class="btn btn-dark">View Campground</a>
+                <div class="card p-3 rounded-3 col-lg-3 col-md-4 col-12">
+                    <img src="./img/Onay Beach.jpg" class="card-img-top rounded-3" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Onay Beach</h5>
+                        <p class="card-text text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+                            voluptate.
+                        </p>
+                        <a href="#" class="btn btn-dark">View Campground</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card p-3 rounded-3">
-                <img src="./img/Seven Sisters Waterfall.jpg" class="card-img-top rounded-3" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Seven Sisters Waterfall</h5>
-                    <p class="card-text text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
-                        voluptate.
-                    </p>
-                    <a href="#" class="btn btn-dark">View Campground</a>
+                <div class="card p-3 rounded-3 col-lg-3 col-md-4 col-12">
+                    <img src="./img/Seven Sisters Waterfall.jpg" class="card-img-top rounded-3" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">Seven Sisters Waterfall</h5>
+                        <p class="card-text text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+                            voluptate.
+                        </p>
+                        <a href="#" class="btn btn-dark">View Campground</a>
+                    </div>
                 </div>
             </div>
         </div>
